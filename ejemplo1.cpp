@@ -35,11 +35,12 @@ int main (){
         }
     }
 
-    cout<<"SALARIO DEL EMPLEADO"<<endl;
+    cout<<"EMPLEADOS CON VENTAS inferiores al 30 unidades en DICIEMBRE"<<endl;
     for(int i=0;i<n;i++){
-        cout<<"nombre: "<<EMPLEADOS[i].nom;
-        cout<<"  salario actualizado: "<<EMPLEADOS[i].sal<<endl;
+        if(EMPLEADOS[i].ven[11]<30){
+            cout<<"numero: "<< EMPLEADOS[i].num<<endl;
+            cout<<"nombre: "<< EMPLEADOS[i].nom<<endl;
+        }
     }
-    
     return 0;
 }
