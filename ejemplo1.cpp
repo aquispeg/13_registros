@@ -24,22 +24,22 @@ int main (){
         cout<<" el salario del empleado: ";
         cin>>EMPLEADOS[i].sal;    
     }
-    int posmax=0;
-    float maxventas=0;
+    
     for(int i=0;i<n;i++){
         float sumaven=0;
         for(int j=0;j<12;j++){
             sumaven=sumaven+EMPLEADOS[i].ven[j];
         }
-        if(sumaven > maxventas){
-            maxventas=sumaven;
-            posmax=i;
+        if(sumaven > 100){
+            EMPLEADOS[i].sal=EMPLEADOS[i].sal*1.10;
         }
     }
-    cout<<"EMPLEADO CON MAYORES VENTAS"<<endl;
-    cout<<"numero: "<<EMPLEADOS[posmax].num<<endl;
-    cout<<"nombre: "<<EMPLEADOS[posmax].nom<<endl;
-    cout<<"ventas totales: "<<maxventas<<endl;
+
+    cout<<"SALARIO DEL EMPLEADO"<<endl;
+    for(int i=0;i<n;i++){
+        cout<<"nombre: "<<EMPLEADOS[i].nom;
+        cout<<"  salario actualizado: "<<EMPLEADOS[i].sal<<endl;
+    }
     
     return 0;
 }
