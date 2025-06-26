@@ -108,6 +108,15 @@ int main(){
                 }
                 system("pause");
                 break;
+            case 5: 
+                cout<<"ingrese el numero de la posicion que quiere eliminar: ";
+                cin>>poscont;
+                for(int i=poscont-1;i<n;i++){
+                    lista[i]=lista[i+1];
+                }
+                n=n-1;
+                system("pause");
+                break;
             case 0:
                 cout<<"Esta seguro de salir? (S/N): ";
                 break;
