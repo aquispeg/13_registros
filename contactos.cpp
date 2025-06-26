@@ -27,7 +27,8 @@ int main(){
         system("cls");
         cout<<"Menu de opciones -------------------------"<<endl;
         cout<<"1. Agregar contacto"<<endl;
-        cout<<"2. Mostrar contactos"<<endl;
+        cout<<"2. Modificar un contacto"<<endl;
+        cout<<"3. Mostrar la lista de contactos"<<endl;
         cout<<"0. Salir"<<endl;
         cout<<"Elige una opcion: "; cin>>op;
         switch(op){
@@ -50,8 +51,45 @@ int main(){
                 system("pause");
                 break;
             case 2:
+                int poscont;
+                cout<<"ingrese el numero de contacto a modificar (1,2,3...):  ";
+                cin>>poscont;
+                for(int m=0;m<n;m++){
+                    if(m==poscont-1){
+                        int op2;
+                        system("cls");
+                        cout<<"1. nombre del contacto: "<<endl; 
+                        cout<<"2. Ingrese el sexo (M/F): "<<endl; 
+                        cout<<"3. Ingrese la edad: "<<endl; 
+                        cout<<"4. Ingrese el correo electronico (usuario@dominio): "<<endl;
+                        cout<<"\tIngrese el usuario: "<<endl; 
+                        cout<<"\tIngrese el dominio: "<<endl; 
+                        cout<<"elige una opcion: "<<endl;
+                        cin>>op2;
+                        switch(op2){
+                        case 1:
+                            cin.ignore();
+                            cout<<"ingrese el nombre del contacto: "; getline(cin,lista[m].nom);
+                        break;
+                        case 2:
+                            cout<<"ingrese el sexo (M/F): ";cin>>lista[m].sex;
+                        break;
+                        case 3:
+                            cout<<"ingrese la edad: ";cin>>lista[m].edad;
+                        break;
+                        case 4:
+                            cout<<"ingrese el correo electronico (usuario@dominio): "<<endl;
+                            cout<<"\tIngrese el usuario: ";cin>>lista[m].email.user;
+                            cout<<"\tIngrese el dominio: ";cin>>lista[m].email.domain;
+                        break;
+                        system("pause");
+                        }
+                    }
+                }
+                break;
+            case 3:
                 for(int i = 0; i < n; i++){
-                    cout<<"Contacto #"<<i<<endl;
+                    cout<<"Contacto #"<<i+1<<endl;
                     imprimeContacto(lista[i]);
                     cout<<endl;
                 }
@@ -68,19 +106,16 @@ int main(){
     } while(op != 0);
     return 0;
 }
-
 void leerContacto(contactoEmail &c, string n, char s, int e, correo em){
     c.nom = n;
     c.sex = s;
     c.edad = e;
     c.email = em;
 }
-
 void leerCorreo(correo &c, string u, string d){
     c.user = u;
     c.domain = d;
 }
-
 void imprimeContacto(contactoEmail &c){
     cout<<"Nombre: "<<c.nom<<endl;
     cout<<"Sexo: "<<c.sex<<endl;
