@@ -117,6 +117,21 @@ int main(){
                 n=n-1;
                 system("pause");
                 break;
+            case 6:
+                system("cls"); 
+                cout<<"ingrese el correo electronico"<<endl;
+                cout<<"ingrese el usuario: ";
+                cin>>user;
+                cout<<"ingrese el dominio: ";
+                cin>>domain;
+                for(int i=0;i<n;i++){
+                    if(user==lista[i].email.user && domain==lista[i].email.domain){
+                        imprimeContacto(lista[i]);
+                    }
+
+                }
+                system("pause");
+                break;
             case 0:
                 cout<<"Esta seguro de salir? (S/N): ";
                 break;
